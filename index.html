@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarnished Scholar - Interactive Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-rune">⚔</div>
+    </div>
+    <!-- Enhanced Particle Canvas -->
+    <canvas class="particles-canvas" id="particlesCanvas"></canvas>
+    <!-- Floating Runes -->
+    <div class="floating-runes" id="floatingRunes"></div>
+    <!-- Header -->
+    <header class="header" id="header">
+        <h1 class="title">Tarnished Scholar</h1>
+        <p class="subtitle">Seeker of Knowledge • Gaming Virtuoso • Philosophical Wanderer</p>
+    </header>
+    <!-- Navigation -->
+    <nav class="nav">
+        <button class="nav-btn" data-text="Gaming Realm" onclick="showSection('gaming')">
+            <span class="nav-text">Gaming Realm</span>
+        </button>
+        <button class="nav-btn" data-text="Philosophy" onclick="showSection('philosophy')">
+            <span class="nav-text">Philosophy</span>
+        </button>
+        <button class="nav-btn" data-text="Book Synthesis" onclick="showSection('books')">
+            <span class="nav-text">Book Synthesis</span>
+        </button>
+        <button class="nav-btn" data-text="The Journey" onclick="showSection('about')">
+            <span class="nav-text">The Journey</span>
+        </button>
+    </nav>
+    <!-- Content -->
+    <main class="content">
+        <!-- Gaming Section -->
+        <section id="gaming" class="section active">
+            <h2>Gaming Realm <span class="rune-symbol">⚔</span></h2>
+            <p>In the vast expanse of digital worlds, I find solace and challenge. Each game is a universe unto itself, offering lessons in strategy, perseverance, and the human condition. From the punishing landscapes of the Lands Between to intricate indie narratives, gaming serves as both entertainment and philosophical exploration.</p>
+            <div class="game-grid">
+                <div class="game-card" onclick="animateCard(this)">
+                    <h3>Souls-like Mastery</h3>
+                    <p>The art of persistence through adversity. Every death teaches, every victory earned through understanding patterns and timing. These games mirror life's greatest lesson: growth through struggle.</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div class="game-card" onclick="animateCard(this)">
+                    <h3>Strategic Depths</h3>
+                    <p>Turn-based and real-time strategy games that challenge the mind. Each decision ripples through time, teaching foresight and consequence management.</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 88%"></div>
+                    </div>
+                </div>
+                <div class="game-card" onclick="animateCard(this)">
+                    <h3>Narrative Journeys</h3>
+                    <p>Story-driven experiences that blur the line between game and literature. Interactive narratives that explore themes of choice, identity, and moral complexity.</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 92%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Philosophy Section -->
+        <section id="philosophy" class="section">
+            <h2>Philosophical Wanderings <span class="rune-symbol">🜃</span></h2>
+            <p>Philosophy is the compass that guides my exploration of existence. Through the wisdom of ages and contemporary thought, I seek to understand the fundamental questions that have captivated humanity since we first gazed at the stars and wondered "why?"</p>
+            <div class="philosophy-quote">
+                The unexamined life is not worth living, yet the over-examined life becomes paralyzed by its own scrutiny. I walk the middle path between ignorance and analysis.
+            </div>
+            <p>My philosophical interests span from ancient Stoicism's practical wisdom to modern existentialism's confrontation with meaninglessness. I find particular fascination in how philosophical concepts manifest in our digital age and gaming culture.</p>
+            <p><strong>Areas of Focus:</strong> Ethics in AI and gaming, existential themes in interactive media, Stoic principles for modern living, and the philosophy of virtual worlds and their impact on human consciousness.</p>
+        </section>
+        <!-- Book Synthesis Section -->
+        <section id="books" class="section">
+            <h2>Book Synthesis <span class="rune-symbol">📚</span></h2>
+            <p>Books are portals to other minds, other worlds, other possibilities. I don't merely read—I synthesize, connecting ideas across disciplines and centuries. Each book becomes part of a growing web of knowledge that shapes my understanding of reality.</p>
+            <div class="book-list">
+                <div class="book-item" onclick="animateBook(this)">
+                    <div class="book-title">Meditations</div>
+                    <div class="book-author">Marcus Aurelius</div>
+                    <p>Personal reflections of a philosopher-emperor, offering timeless wisdom on duty, mortality, and finding peace in chaos.</p>
+                </div>
+                <div class="book-item" onclick="animateBook(this)">
+                    <div class="book-title">The Myth of Sisyphus</div>
+                    <div class="book-author">Albert Camus</div>
+                    <p>An exploration of absurdism and the human condition, finding meaning in the struggle itself rather than its outcome.</p>
+                </div>
+                <div class="book-item" onclick="animateBook(this)">
+                    <div class="book-title">Sapiens</div>
+                    <div class="book-author">Yuval Noah Harari</div>
+                    <p>A sweeping narrative of human history, examining how shared myths and stories have shaped civilization.</p>
+                </div>
+                <div class="book-item" onclick="animateBook(this)">
+                    <div class="book-title">The Art of Game Design</div>
+                    <div class="book-author">Jesse Schell</div>
+                    <p>Bridge between creativity and technical craft, exploring how games can be vehicles for meaningful experiences.</p>
+                </div>
+            </div>
+        </section>
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2>The Journey <span class="rune-symbol">🗿</span></h2>
+            <p>Like the Tarnished seeking the Elden Ring, I am on a quest for understanding. My path winds through digital landscapes, philosophical treatises, and the written wisdom of countless thinkers. Each challenge overcome, each book synthesized, each game mastered adds another piece to the puzzle of existence.</p>
+            <div class="philosophy-quote">
+                In seeking knowledge, I have become both student and teacher, both player and philosopher, both reader and synthesizer. The journey itself is the destination.
+            </div>
+            <p>My mission is to bridge the gaps between these seemingly disparate worlds, showing how gaming can be philosophical, how philosophy can be practical, and how synthesis of knowledge can lead to genuine wisdom and insight.</p>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html> 
